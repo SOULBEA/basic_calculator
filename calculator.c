@@ -5,7 +5,8 @@
 float add(float a, float b);
 float sub(float a, float b);
 float multi(float a, float b);
-float division(int a, int b);
+float division(float a, float b);
+float area_circle(float radius);
 
 int main(){
     printf("==================\t HELLO WELCOME TO BASIC CALCULATOR\t ========================\n");
@@ -40,6 +41,26 @@ int main(){
         scanf("%f", &y);
         multi(x, y);
     }
+    else if (user_input == 4)
+    {
+        float x, y;
+        printf("Enter the value of x: ");
+        scanf("%f", &x);
+        printf("Enter the value of y: ");
+        scanf("%f", &y);
+        division(x, y);
+    }
+    else if(user_input == 5)
+    {
+        float x, y, radius;
+        printf("Enter value of radius : ");
+        scanf("%f", &radius);
+        area_circle(radius);
+    }
+    else{
+        printf("invalid input: %d", user_input);
+    }
+    
     
     
 
@@ -63,4 +84,17 @@ float multi(float a, float b){
     float result3 = a*b;
     printf("multiplication of a x b = %f\n", result3);
     return result3;
+}
+
+float division(float a, float b){
+    float result4 = a/b;
+    printf("division of x / y = %f \n", result4);
+    return result4;
+}
+
+float area_circle(float radius)
+{
+    float result5 = 3.1415*radius;
+    printf("area of the circle = %f", result5);
+    return result5;
 }
