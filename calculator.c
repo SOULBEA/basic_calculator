@@ -13,10 +13,11 @@ float area_sq(float side);
 float area_rec(float len, float wid);
 float area_tri(float base, float height);
 float factorial(float a);
+int table(int a);
 int main(){
     printf("==================\t HELLO WELCOME TO BASIC CALCULATOR\t ========================\n");
     char user_input[100];
-    printf("Press 1 to add two number, press 2 to subtract two number, press 3 to multi two number, press 4 to divide two number: ");
+    printf("Type the fucntion you want for example if you type add it will do addition of two numbers and area_of_circle will calculate area and so on:  ");
     scanf("%s", &user_input);
 
     if (strcmp(user_input, "add") == 0 || strcmp(user_input, "addition") == 0) {
@@ -101,6 +102,12 @@ int main(){
         scanf("%f", &num);
         factorial(num);
     }
+    else if(strcmp(user_input, "table") == 0 || strcmp(user_input, "table_of") == 0){
+        int num;
+        printf("Please enter the number of the number to get the desired table: ");
+        scanf("%d", &num);
+        table(num);
+    }
     
     
     
@@ -176,4 +183,12 @@ float factorial(float a)
     }
     printf("Fctorial of the entered value = %f", f);
     return f;
+}
+
+int table(int a){
+    for(int i = 1; i<=10; i++){
+        int result8 = a*i;
+        printf("%d x %d = %d \n", a, i, result8);
+        // return result8;
+    }
 }
