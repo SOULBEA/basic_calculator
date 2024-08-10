@@ -2,37 +2,50 @@
 #include<string>
 using namespace std;
 
-int add(int a, int b);
-int sub(int a, int b);
+int add(int n);
+int sub(int n);
 int division(int a, int b);
 int multi(int a, int b);
 
 int main(){
-  do{
   string user_input;
   cout<<"please enter a response: ";
-  getline(cin, n);
-  int num;
-  int arr[num];
+  getline(cin, user_input);
   if(user_input == "add"){
-    int a, b;
-    //cout<<"please enter first number: ";
-    //cin>>a;
-
-    //cout<<"please enter second number: ";
-    //cin>>b;
-    cout<<"please enter numbers to add: ";
-    for(int i = 1; i<n; i++){
-      cin>>arr[i];
-    }
-    add(a, b);
+    int num;
+    add(num);
   }
-
+  else if(user_input == "sub"){
+    int num;
+    sub(num);
+  }
   return 0;
 }
 
-int add(int arr[]){
-  
-  cout<<"addition of a+b = "<<a+b<<endl;
-  return a+b;
+int add(int n){
+  int sum = 0; 
+  int x;
+  cout<<"please enter total number you want to add: ";
+  cin>>x;
+  int arr[x];
+  for(int i = 0; i<=x; i++){
+    cin>>arr[i];
+    sum = sum+arr[i];
+  }
+  cout<<"sum = "<<sum<<endl;
+  return sum;
+}
+
+int sub(int n){
+  int sub = 0;
+  int x;
+  cout<<"please enter total number : ";
+  cin>>x;
+  int arr[x];
+  for(int i = 0; i<x; i++){
+    cin>>arr[i];
+    sub = sub-arr[i];
+  }
+  cout<<"subtraction = "<<sub<<endl;
+  return sub;
 }
